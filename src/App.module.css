@@ -44,20 +44,33 @@ body {
 
 .container .leftSide button{
   background-color: #227C9D;
+  background-size:cover;
+  background-repeat: no-repeat;
   color: #FFFFFF;
   font-size: 15px;
   border: 0;
+  box-shadow: 0 0 0 0 rgba(34, 124, 157, 0.4);
   border-radius: 10px;
   padding: 15px 0;
   width: 100%;
   cursor: pointer;
   margin-top: 30px;
-  transition: all ease .3s;
+  transition: all ease .4s;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
 }
 
 .container .leftSide button:hover {
-  opacity: 0.7;
+  opacity: 0.4;
+  -webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none;
 }
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 40px rgba(34, 124, 157, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 40px rgba(34, 124, 157, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 40px rgba(34, 124, 157, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 40px rgba(34, 124, 157, 0);}}
 
 .container .rightSide {
   flex: 1;

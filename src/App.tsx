@@ -42,7 +42,7 @@ const App = () => {
             onChange={event => setWeightField(parseFloat(event.target.value))}
           />
 
-          <button onClick={handleCalculate}>Calcular</button>
+          <button className='pulse-button' onClick={handleCalculate}>Calcular</button>
 
         </div>
         <div className={styles.rightSide}>
@@ -51,5 +51,5 @@ const App = () => {
       </div>
     </div>
   )
-} 
+}
 export default App;
