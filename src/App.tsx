@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import styles from './App.module.css';
 import image from './assets/logoImc.png';
+import { GridItem } from './components/gridItem/GridItem';
+
 import { levels, calculaIMC } from './logic/imc';
 
 const App = () => {
@@ -46,10 +48,15 @@ const App = () => {
 
         </div>
         <div className={styles.rightSide}>
-          ...
+          <div className={styles.grid}>
+            {levels.map((item, key) => (
+              <GridItem key={key} item={item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
   )
 }
+
 export default App;
