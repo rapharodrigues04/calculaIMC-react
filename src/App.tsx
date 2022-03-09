@@ -3,16 +3,17 @@ import styles from './App.module.css';
 import image from './assets/logoImc.png';
 import { GridItem } from './components/gridItem/GridItem';
 
-import { levels, calculaIMC } from './logic/imc';
+import { levels, calculaIMC, Level } from './logic/imc';
 
 const App = () => {
 
   const [heightField, setHeightField] = useState<number>(0);
   const [weightField, setWeightField] = useState<number>(0);
+  const [toShow, setToShow] = useState<Level | null>(null);
 
   const handleCalculate = () => {
     if (heightField && weightField) {
-
+      setToShow(calculaIMC(heightField, weightField));
     } else {
       alert('Preencha todos os campos')
     }
@@ -48,11 +49,19 @@ const App = () => {
 
         </div>
         <div className={styles.rightSide}>
-          <div className={styles.grid}>
-            {levels.map((item, key) => (
-              <GridItem key={key} item={item} />
-            ))}
-          </div>
+          {!toShow &&
+            <div className={styles.grid}>
+              {levels.map((item, key) => (
+                <GridItem key={key} item={item} />
+              ))}
+            </div>
+          }
+          {toShow &&
+            <div className={styles.rightBig}>
+              <div className={styles.rightArrow}></div>
+              <GridItem item={toShow} />
+            </div>
+          }
         </div>
       </div>
     </div>
