@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './App.module.css';
 import image from './assets/logoImc.png';
+import leftArrowImage from './assets/leftarrow.png';
 import { GridItem } from './components/gridItem/GridItem';
 
 import { levels, calculaIMC, Level } from './logic/imc';
@@ -17,6 +18,12 @@ const App = () => {
     } else {
       alert('Preencha todos os campos')
     }
+  }
+
+  const handleBackButton = () => {
+    setToShow(null);
+    setHeightField(0);
+    setWeightField(0);
   }
 
   return (
@@ -58,7 +65,9 @@ const App = () => {
           }
           {toShow &&
             <div className={styles.rightBig}>
-              <div className={styles.rightArrow}></div>
+              <div className={styles.rightArrow} onClick={handleBackButton}>
+                <img className='pulse-button' src={leftArrowImage} width={25} />
+              </div>
               <GridItem item={toShow} />
             </div>
           }
