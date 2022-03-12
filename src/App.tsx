@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import styles from './App.module.css';
-import image from './assets/logoImc.png';
+import image from './assets/imc.png';
 import leftArrowImage from './assets/leftarrow.png';
 import { GridItem } from './components/gridItem/GridItem';
+import 'materialize-css/dist/css/materialize.min.css'
 
 import { levels, calculaIMC, Level } from './logic/imc';
 
@@ -28,9 +29,17 @@ const App = () => {
 
   return (
     <div className={styles.main}>
+      <div className="row">
+        <div className="switch">
+          <label className='itemLabel'>OFF
+            <input id='swith' type="checkbox"></input>
+            <span className="lever"></span>ON
+          </label>
+        </div>
+      </div>
       <header>
         <div className={styles.headerContainer}>
-          <img src={image} alt="" width={150} />
+          <img src={image} alt="" width={90} />
         </div>
       </header>
       <div className={styles.container}>

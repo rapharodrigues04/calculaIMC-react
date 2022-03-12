@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+div .switch {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: end;
+}
