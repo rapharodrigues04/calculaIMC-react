@@ -39,7 +39,7 @@ const App = () => {
       </div>
       <header>
         <div className={styles.headerContainer}>
-          <img src={image} alt="" width={90} />
+          <img src={image} width={90} margin-top={0} />
         </div>
       </header>
       <div className={styles.container}>
