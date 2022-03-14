@@ -14,8 +14,6 @@
 
 Calculadora IMC
 
-## Screenshot
-
 <img src='./src/assets/print1.png'/>
 <img src='./src/assets/print2.png'/>
 
